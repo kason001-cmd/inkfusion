@@ -2,18 +2,16 @@ import { cookies } from "next/headers"
 import { createServerClient } from "@supabase/ssr"
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-// Use the public/publishable (anon) key for SSR auth flows; do NOT use service role in user-session code.
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY")
+if (!supabaseUrl || !serviceRoleKey) {
+  throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY")
 }
 
-export async function createServerSupabaseClient() {
-  // In Next 16, cookies() is async in route handlers; await it before use.
-  const cookieStore = await cookies()
+export function createServerSupabaseClient() {
+  const cookieStore = cookies()//
 
-  return createServerClient(supabaseUrl, supabaseAnonKey, {
+  return createServerClient(supabaseUrl, serviceRoleKey, {
     cookies: {
       getAll: () =>
         cookieStore.getAll().map((item) => ({
