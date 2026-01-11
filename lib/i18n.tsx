@@ -111,7 +111,7 @@ const translations = {
 
     // FAQ
     "faq.title": "Frequently Asked Questions",
-    "faq.subtitle": "Everything you need to know about AI Tattoo Art",
+    "faq.subtitle": "Everything you need to know about Ink Fusion Art",
     "faq.q1": "How does the AI tattoo generator work?",
     "faq.a1":
       "Our AI analyzes your text description and generates unique tattoo designs using advanced machine learning. Simply describe what you want, select a style, and get multiple design options in seconds.",
@@ -249,7 +249,7 @@ const translations = {
 
     // FAQ
     "faq.title": "常见问题",
-    "faq.subtitle": "关于 AI 纹身艺术您需要知道的一切",
+    "faq.subtitle": "关于 Ink Fusion Art 您需要知道的一切",
     "faq.q1": "AI 纹身生成器如何工作？",
     "faq.a1":
       "我们的 AI 分析您的文字描述，使用先进的机器学习生成独特的纹身设计。只需描述您想要的内容，选择风格，几秒钟内即可获得多个设计选项。",
