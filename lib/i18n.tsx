@@ -39,9 +39,28 @@ const translations = {
     "generator.placeholder":
       "Describe your tattoo idea... (e.g., a phoenix rising from flames with geometric patterns)",
     "generator.style": "Select Style",
+    "generator.placement": "Placement",
     "generator.color": "Select Color",
     "generator.generate": "Generate Tattoo",
     "generator.generating": "Creating your design...",
+    "generator.loginRequired": "Please log in to generate a tattoo.",
+    "generator.historyTitle": "Your History",
+    "generator.historyLoading": "Loading your history...",
+    "generator.historyEmpty": "No generations yet.",
+    "generator.historyLoginToView": "Log in to view your generation history.",
+    "generator.historyRefresh": "Refresh",
+
+    // Placement options
+    "placement.none": "No Body Mockup",
+    "placement.arm": "Arm",
+    "placement.forearm": "Forearm",
+    "placement.upperArm": "Upper Arm",
+    "placement.shoulder": "Shoulder",
+    "placement.chest": "Chest",
+    "placement.back": "Back",
+    "placement.thigh": "Thigh",
+    "placement.calf": "Calf",
+    "placement.stomach": "Stomach",
 
     // Color options
     "color.black": "Black",
@@ -158,9 +177,28 @@ const translations = {
     "generator.subtitle": "描述你梦想中的纹身，让 AI 为你创造",
     "generator.placeholder": "描述你的纹身想法...（例如：一只凤凰从火焰中升起，带有几何图案）",
     "generator.style": "选择风格",
+    "generator.placement": "身体部位",
     "generator.color": "选择颜色",
     "generator.generate": "生成纹身",
     "generator.generating": "正在创建您的设计...",
+    "generator.loginRequired": "请先登录，再生成纹身。",
+    "generator.historyTitle": "历史记录",
+    "generator.historyLoading": "正在加载历史记录...",
+    "generator.historyEmpty": "暂无生成记录。",
+    "generator.historyLoginToView": "登录后可查看生成历史。",
+    "generator.historyRefresh": "刷新",
+
+    // Placement options
+    "placement.none": "不展示部位效果图",
+    "placement.arm": "手臂",
+    "placement.forearm": "前臂",
+    "placement.upperArm": "上臂",
+    "placement.shoulder": "肩部",
+    "placement.chest": "胸部",
+    "placement.back": "后背",
+    "placement.thigh": "大腿",
+    "placement.calf": "小腿",
+    "placement.stomach": "腹部",
 
     // Color options
     "color.black": "纯黑",

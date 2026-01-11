@@ -9,7 +9,7 @@ const ensureSafePath = (path: string | null) => {
 }
 
 export async function GET(request: Request) {
-  const supabase = createServerSupabaseClient()
+  const supabase = await createServerSupabaseClient()
   const url = new URL(request.url)
   const safeNext = ensureSafePath(url.searchParams.get("next"))
   const callbackUrl = new URL("/auth/callback", url.origin)
@@ -20,18 +20,19 @@ export async function GET(request: Request) {
     options: {
       redirectTo: callbackUrl.toString(),
       queryParams: {
+        // Ensures refresh token and full consent screen
         access_type: "offline",
         prompt: "consent",
       },
     },
   })
 
-  if (error || !data.url) {
+  if (error || !data || !data.url) {
     return NextResponse.json(
       { error: error?.message ?? "Unable to start Google login" },
       { status: 500 },
     )
   }
 
-  return NextResponse.redirect(data.url)
+  return NextResponse.redirect(new URL(data.url))
 }

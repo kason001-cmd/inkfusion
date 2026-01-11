@@ -18,13 +18,19 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const t = (key: string): string => {
     const keys = key.split(".")
-    let value: any = translations[language]
+    // Use unknown and narrow instead of any to satisfy lint rules
+    let value: unknown = translations[language] as unknown
 
     for (const k of keys) {
-      value = value?.[k]
+      if (value && typeof value === "object" && k in (value as Record<string, unknown>)) {
+        value = (value as Record<string, unknown>)[k]
+      } else {
+        value = undefined
+        break
+      }
     }
 
-    return value || key
+    return (typeof value === "string" && value.length > 0) ? value : key
   }
 
   return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>

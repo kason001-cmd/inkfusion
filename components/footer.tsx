@@ -80,7 +80,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-border pt-8 text-center text-muted-foreground">
-          <p>© 2025 AI Tattoo Art. {t("footer.rights")}</p>
+          <p>© 2025 Ink Fusion Art. {t("footer.rights")}</p>
         </div>
       </div>
     </footer>

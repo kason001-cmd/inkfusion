@@ -1,5 +1,6 @@
 "use client"
 
+import { Suspense } from "react"
 import { I18nProvider } from "@/lib/i18n"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
@@ -16,7 +17,10 @@ export default function Home() {
   return (
     <I18nProvider>
       <div className="min-h-screen bg-background">
-        <Header />
+        {/* Wrap useSearchParams consumer in Suspense for prerendering */}
+        <Suspense fallback={null}>
+          <Header />
+        </Suspense>
         <main>
           <Hero />
           <TattooGenerator />
